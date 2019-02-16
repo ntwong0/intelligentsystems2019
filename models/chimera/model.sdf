@@ -1,0 +1,560 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="chimera">
+    <static>false</static>
+    <link name = 'chassis'>
+      <pose> 0 0 .6 0 0 0 </pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>2.0</mass>
+      </inertial>
+      <collision name = 'central-coll'>
+        <pose>0 0 .25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = 'central-vis'>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+        <pose>0 0 .25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.1 .1 .5</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'bow-coll'>
+        <pose>0	0.08867529536	0	0	0	1.570796327</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='bow-vis'>
+        <pose>0	0.08867529536	0	0	0	1.570796327</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'port-bow-coll'>
+        <pose>-0.11339739	0.06547001365	0	0	0	1.047197551</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='port-bow-vis'>
+        <pose>-0.11339739	0.06547001365	0	0	0	1.047197551</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'port-stern-coll'>
+        <pose>-0.07679505847	-0.04433764768	0	0	0	0.5235987756</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='port-stern-vis'>
+        <pose>-0.07679505847	-0.04433764768	0	0	0	0.5235987756</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'stern-coll'>
+        <pose>0	-0.1309400273	0	0	0	0</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='stern-vis'>
+        <pose>0	-0.1309400273	0	0	0	0</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'starboard-stern-coll'>
+        <pose>0.07679505847	-0.04433764768	0	0	0	2.617993878</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='starboard-stern-vis'>
+        <pose>0.07679505847	-0.04433764768	0	0	0	2.617993878</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = 'starboard-bow-coll'>
+        <pose>0.11339739	0.06547001365	0	0	0	2.094395102</pose>
+        <geometry>
+          <box>
+            <size>.4 .2 .1 </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='starboard-bow-vis'>
+        <pose>0.11339739	0.06547001365	0	0	0	2.094395102</pose>
+        <geometry>
+          <box>
+            <size> .4 .2 .1 </size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "bow-stabilizer">
+      <pose>0 0.5386752954 0.6 0 0 1.570796327</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.30</mass>
+      </inertial>
+      <collision name = "stabilizer-coll">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "stabilizer-vis">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "bow-coupler">
+      <pose>0 0.6886752954 0.4 0 0 1.570796327</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.1</mass>
+      </inertial>
+      <collision name = "coupler-top-coll">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-top-vis">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = "coupler-side-coll">
+        <pose>0.075 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-side-vis">
+        <pose>0 0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.05 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "bow-wheel">
+      <pose>0 0.6886752954 0.25 1.570796327 0 1.570796327</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "wheel-coll">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name = "wheel-vis">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "port-stern-stabilizer">
+      <pose>-0.4665064902 -0.2693376477 0.6 0 0 3.665191429</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "stabilizer-coll">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "stabilizer-vis">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "port-stern-coupler">
+      <pose>-0.5964103007 -0.3443376477 0.4 0 0 3.665191429</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.1</mass>
+      </inertial>
+      <collision name = "coupler-top-coll">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-top-vis">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = "coupler-side-coll">
+        <pose>0.075 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-side-vis">
+        <pose>0 0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.05 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "port-stern-wheel">
+      <pose>-0.5964103007 -0.3443376477 0.25 1.570796327 0 3.665191429</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "wheel-coll">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name = "wheel-vis">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "starboard-stern-stabilizer">
+      <pose>0.4665064902 -0.2693376477 0.6 0 0 5.759586532</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "stabilizer-coll">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "stabilizer-vis">
+        <geometry>
+          <box>
+            <size>0.5 0.2 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "starboard-stern-coupler">
+      <pose>0.5964103007 -0.3443376477 0.4 0 0 5.759586532</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "coupler-top-coll">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-top-vis">
+        <pose>0 0 0.1375 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = "coupler-side-right-coll">
+        <pose>0 0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-side-right-vis">
+        <pose>0 0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.05 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name = "coupler-side-left-coll">
+        <pose>0 -0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-side-left-vis">
+        <pose>0 -0.075 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.05 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "starboard-stern-wheel">
+      <pose>0.5964103007 -0.3443376477 0.25 1.570796327 0 5.759586532</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "wheel-coll">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name = "wheel-vis">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name = "chassis_bow-stabilizer" type="revolute">
+      <pose>-0.25 0 0 1.570796327 0 0</pose>
+      <child>bow-stabilizer</child>
+      <parent>chassis</parent>
+      <axis>
+        <limit>
+          <lower>-0.4</lower>
+          <upper>0.4</upper>
+        </limit>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    <joint name = "bow-stabilizer_coupler" type="revolute">
+      <pose>0 0 0.15 0 0 0</pose>
+      <child>bow-coupler</child>
+      <parent>bow-stabilizer</parent>
+      <axis>
+        <limit>
+          <lower>-3.141592654</lower>
+          <upper>3.141592654</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name = "bow-coupler_wheel" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <child>bow-wheel</child>
+      <parent>bow-coupler</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    <joint name = "chassis_port-stern-stabilizer" type="revolute">
+      <pose>-0.25 0 0 1.570796327 0 0</pose>
+      <child>port-stern-stabilizer</child>
+      <parent>chassis</parent>
+      <axis>
+        <limit>
+          <lower>-0.4</lower>
+          <upper>0.4</upper>
+        </limit>
+        <xyz>-0.5 0.8660254038 0</xyz>
+      </axis>
+    </joint>
+    <joint name = "port-stern-stabilizer_coupler" type="revolute">
+      <pose>0 0 0.15 0 0 0</pose>
+      <child>port-stern-coupler</child>
+      <parent>port-stern-stabilizer</parent>
+      <axis>
+        <limit>
+          <lower>-3.141592654</lower>
+          <upper>3.141592654</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name = "port-stern-coupler_wheel" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <child>port-stern-wheel</child>
+      <parent>port-stern-coupler</parent>
+      <axis>
+        <xyz>-0.5 0.8660254038 0</xyz>
+      </axis>
+    </joint>
+    <joint name = "chassis_starboard-stern-stabilizer" type="revolute">
+      <pose>-0.25 0 0 1.570796327 0 0</pose>
+      <child>starboard-stern-stabilizer</child>
+      <parent>chassis</parent>
+      <axis>
+        <limit>
+          <lower>-0.4</lower>
+          <upper>0.4</upper>
+        </limit>
+        <xyz>-0.5 -0.8660254038 0</xyz>
+      </axis>
+    </joint>
+    <joint name = "starboard-stern-stabilizer_coupler" type="revolute">
+      <pose>0 0 0.15 0 0 0</pose>
+      <child>starboard-stern-coupler</child>
+      <parent>starboard-stern-stabilizer</parent>
+      <axis>
+        <limit>
+          <lower>-3.141592654</lower>
+          <upper>3.141592654</upper>
+        </limit>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name = "starboard-stern-coupler_wheel" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <child>starboard-stern-wheel</child>
+      <parent>starboard-stern-coupler</parent>
+      <axis>
+        <xyz>-0.5 -0.8660254038 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>
+

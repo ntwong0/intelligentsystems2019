@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="chimera_wheel">
+    <static>false</static>
+    <pose>0 0 0 3.14 0 0</pose>
+    <link name = "bow-coupler">
+      <pose>0 0.6886752954 0.4 0 0 1.570796327</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.1</mass>
+      </inertial>
+      <collision name = "coupler-coll">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name = "coupler-vis">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name = "bow-wheel">
+      <pose>0 0.6886752954 0.25 1.570796327 0 1.570796327</pose>
+      <inertial>
+          <inertia>
+              <ixx>0.01</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.01</iyy>
+              <iyz>0</iyz>
+              <izz>0.01</izz>
+          </inertia>
+          <mass>0.3</mass>
+      </inertial>
+      <collision name = "wheel-coll">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name = "wheel-vis">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name = "bow-coupler_wheel" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <child>bow-wheel</child>
+      <parent>bow-coupler</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>
+
