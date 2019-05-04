@@ -20,3 +20,6 @@
 [submodule "src/move_base_msgs"]
 	path = src/move_base_msgs
 	url = https://github.com/ros-gbp/navigation_msgs-release.git
+[submodule "src/image_pipeline.git"]
+	path = src/image_pipeline
+	url = https://github.com/ros-perception/image_pipeline.git

@@ -28,6 +28,7 @@ $ grep -C 1 bullet base.yaml # The output here will inform you on which system p
 * realsense2\_camera
   * from [this repo](https://github.com/intel-ros/realsense)
   * Using commit hash 855cf51
+* (To be considered: ublox, from https://github.com/KumarRobotics/ublox)
 
 ### 3. Download this project
 ```
