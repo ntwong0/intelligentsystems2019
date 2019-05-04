@@ -5,6 +5,22 @@
 1. Linux environment
 2. ROS-kinetic
 3. [Intel RealSense SDK 2.0](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
+  * For the Jetson TX2, you won't be able to proceed with the Debian package. Instead, build the SDK via [these instructions](https://www.jetsonhacks.com/2018/07/10/librealsense-update-nvidia-jetson-tx-dev-kits/). Ensure `LIBREALSENSE\_VERSION` is set to `v2.19.0` for both `installLibrealsense.sh` and `buildPatchedKernel.sh`
+4. Requirements for ROS packages (use `sudo apt-get install` for the following)
+  * bullet: libbullet-dev
+  * sdl: libsdl1.2-dev
+  * sdl-image: libsdl-image1.2-dev
+  * openslam\_gmapping: ros-kinetic-openslam-gmapping 
+  * orocos-bfl: ros-kinetic-bfl
+  * Note: if you encounter CMake errors reporting missing system packages, you can pull the file that references the dependency with `rosdep where-defined <name_of_package>`, then reference the dependency entry within the file to determine which system package to pull
+    * Example: 
+```
+$ rosdep where-defined bullet
+https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml$ wget https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+...
+$ grep -C 1 bullet base.yaml # The output here will inform you on which system package to apt-get
+
+```
 
 ### 2. ROS packages in this workspace
 * pretend-esp32

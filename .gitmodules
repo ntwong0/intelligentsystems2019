@@ -11,3 +11,12 @@
 [submodule "src/robot_localization"]
 	path = src/robot_localization
 	url = https://github.com/ntwong0/robot_localization.git
+[submodule "src/geographic_info"]
+	path = src/geographic_info
+	url = https://github.com/ros-geographic-info/geographic_info-release.git
+[submodule "src/uuid_msgs"]
+	path = src/uuid_msgs
+	url = https://github.com/ros-geographic-info/unique_identifier-release.git
+[submodule "src/move_base_msgs"]
+	path = src/move_base_msgs
+	url = https://github.com/ros-gbp/navigation_msgs-release.git
