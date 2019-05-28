@@ -23,3 +23,6 @@
 [submodule "src/image_pipeline.git"]
 	path = src/image_pipeline
 	url = https://github.com/ros-perception/image_pipeline.git
+[submodule "src/comp_vis"]
+	path = src/comp_vis
+	url = https://github.com/ntwong0/pri_comp_vis.git

@@ -38,14 +38,18 @@ git checkout 855cf51
 cd -
 ```
 ### 4. Set it up
-`catkin_make`
+* `catkin_make -DCMAKE_BUILT_TYPE=Release`
+* Be sure to set up the environmental variables for the project: `source get-SJR_ROS.bash`
 
 ### 5. ROS tips
 #### rosbag
 * Replaying recordings
-  * `$ rosbag play path/to/file.bag`
+  * `$ rosbag play --clock path/to/file.bag`
 * Recording messages
   * `$ rosbag record <list of topics>`
+* Duplicating a rosbag, with only a specific set of topics
+  * `$ rosbag filter path/to/source.bag path/to/new.bag "topic in ['/first/topic', '/second/topic']"`
+  * For bags from `realsense-viewer`: `$ rosbag filter path/to/source.bag path/to/new.bag "topic in ['/device_0/sensor_0/Depth_0/info/camera_info', '/device_0/sensor_1/Color_0/info/camera_info', '/device_0/sensor_0/Depth_0/image/data', '/device_0/sensor_1/Color_0/image/data']"`
 * Topics to record
   * /camera/color/camera\_info
   * /camera/color/image\_raw
